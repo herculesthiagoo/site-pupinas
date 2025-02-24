@@ -1,3 +1,6 @@
+// Variável global para o intervalo do contador
+let countdownInterval;
+
 // Função para carregar o widget
 function loadWidget() {
     // Cria um elemento <div> para o widget
@@ -62,7 +65,9 @@ function initializeCountdown() {
         }
     }
 
-    const countdownInterval = setInterval(updateCountdown, 1000);
+    // Inicia o contador
+    countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Atualiza imediatamente
 }
 
 // Função para reiniciar o contador
